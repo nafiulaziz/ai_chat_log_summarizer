@@ -40,6 +40,6 @@ def summarize_chat(user_msgs, ai_msgs, all_msgs, use_tfidf=False):
         'user_count': len(user_msgs),
         'ai_count': len(ai_msgs),
         'keywords': keywords,
-        'topic': ', '.join(keywords[:2])
+        'topic': ', '.join(keywords[:1])
     }
     return summary

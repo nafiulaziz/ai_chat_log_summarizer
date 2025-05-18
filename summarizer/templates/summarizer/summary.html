@@ -5,8 +5,8 @@
     <li>Total Exchanges: {{ summary.total }}</li>
     <li>User Messages: {{ summary.user_count }}</li>
     <li>AI Messages: {{ summary.ai_count }}</li>
-    <li>Keywords: {{ summary.keywords|join:", " }}</li>
-    <li>Topic: {{ summary.topic }}</li>
+    <li>Most common keywords: {{ summary.keywords|join:", " }}</li>
+    <li>Topic: The User is mainly talking about {{ summary.topic }}</li>
   </ul>
   <a href="{% url 'upload' %}">Upload another file</a>
 {% else %}
