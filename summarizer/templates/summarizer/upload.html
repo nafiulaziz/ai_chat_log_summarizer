@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Chat Log Summarizer</title>
+</head>
+<body>
+    <h1>Upload Chat Log</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Summarize</button>
+    </form>
+
+    {% if summary %}
+        <h2>Summary:</h2>
+        <p><strong>Total Exchanges:</strong> {{ summary.total }}</p>
+        <p><strong>User Messages:</strong> {{ summary.user_count }}</p>
+        <p><strong>AI Messages:</strong> {{ summary.ai_count }}</p>
+        <p><strong>Keywords:</strong> {{ summary.keywords|join:", " }}</p>
+        <p><strong>Topic:</strong> {{ summary.topic }}</p>
+    {% endif %}
+</body>
+</html>
