@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import upload_view
+from . import views
 
 urlpatterns = [
-    path('', upload_view, name='upload'),
+    path('', views.upload_view, name='upload'),
+    path('summary/', views.summary_view, name='summary'),  # New summary page
 ]
